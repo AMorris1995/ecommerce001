@@ -1,6 +1,7 @@
 import Banner from "../../Components/Home/Banner";
 import "react-multi-carousel/lib/styles.css";
 import QuickShopBox from "../../Components/Home/QuickShopBox";
+import { Link } from "react-router-dom";
 import classes from "./Homepage.module.scss";
 import Carousel from "react-multi-carousel";
 
@@ -47,6 +48,10 @@ export default function Homepage(props) {
                     <QuickShopBox>Desktops</QuickShopBox>
                 </Carousel>
             </div>
+
+            <Link to="/admin" style={{ textAlign: "center", display: "block" }}>
+                CLICK ME TO ADD PRODUCTS
+            </Link>
         </div>
     );
 }
