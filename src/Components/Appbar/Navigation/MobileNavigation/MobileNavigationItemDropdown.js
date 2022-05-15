@@ -1,6 +1,7 @@
 import classes from "./MobileNavigation.module.scss";
 import MobileNavigationTopMenu from "./MobileNavigationTopMenu";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { Link } from "react-router-dom";
 export default function MobileNavigationItemDropdown(props) {
     return (
         <div
@@ -27,7 +28,7 @@ export default function MobileNavigationItemDropdown(props) {
             <h5 style={{ padding: ".5rem 1rem " }}>{props.navItem.category}</h5>
             <ul className={classes.Categorys} style={{ padding: "0" }}>
                 {props.navItem.subCategorys.map((subCat, subIndex) => (
-                    <li className={classes.CategoryItems}>
+                    <li className={classes.CategoryItems} key={subIndex}>
                         <div
                             onClick={() =>
                                 props.onNavItemClickHandler(
@@ -37,7 +38,7 @@ export default function MobileNavigationItemDropdown(props) {
                             }
                             className={classes.MobileNavigation__Item__Wrapper}
                         >
-                            <p style={{ fontSize: "0.9rem" }}>
+                            <p style={{ fontSize: "0.8rem" }}>
                                 {subCat.subCategory}
                             </p>
                             {subCat.children && <BiChevronRight />}
@@ -73,19 +74,30 @@ export default function MobileNavigationItemDropdown(props) {
                                 />{" "}
                                 Back to {props.navItem.category}
                             </h5>
-                            <h5 style={{ padding: ".5rem 1rem " }}>
+                            <h5
+                                style={{
+                                    padding: ".5rem 1rem ",
+                                    fontSize: "0.8rem",
+                                }}
+                            >
                                 {subCat.subCategory}
                             </h5>
                             {subCat.children &&
                                 subCat.children.map((child) => (
                                     <li
+                                        key={child}
                                         className={classes.CategoryItems}
                                         style={{
                                             padding: "1rem",
-                                            fontSize: "0.9rem",
+                                            fontSize: "0.8rem",
                                         }}
                                     >
-                                        {child}
+                                        <Link
+                                            to={`/${child}`}
+                                            onClick={props.toggleOpen}
+                                        >
+                                            {child}
+                                        </Link>
                                     </li>
                                 ))}
                         </div>

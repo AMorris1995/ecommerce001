@@ -44,6 +44,7 @@ export default function MobileNavigation(props) {
                 <MobileNavigationTopMenu toggleOpen={props.toggleOpen} />
                 {navData.map((navItem, index) => (
                     <MobileNavigationItem
+                        key={index}
                         toggleOpen={props.toggleOpen}
                         onNavItemClickHandler={onNavItemClickHandler}
                         index={index}

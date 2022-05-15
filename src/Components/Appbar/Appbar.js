@@ -7,7 +7,9 @@ import classes from "./Appbar.module.scss";
 import BasketIcon from "./BasketIcon";
 import MobileNavigation from "./Navigation/MobileNavigation/MobileNavigation";
 import ToggleButton from "./Navigation/MobileNavigation/ToggleButton";
+import categoryData from "../../categoryData";
 
+const initialCatData = [...categoryData];
 export default function Appbar(props) {
     const [open, setOpen] = useState(false);
     const toggleOpen = () => {

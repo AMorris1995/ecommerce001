@@ -35,6 +35,7 @@ export default function Homepage(props) {
                     swipeable
                     removeArrowOnDeviceType={["tablet", "mobile"]}
                     containerClass={classes.Container}
+                    autoPlay={false}
                 >
                     <QuickShopBox>Laptops</QuickShopBox>
                     <QuickShopBox>Washing machines</QuickShopBox>

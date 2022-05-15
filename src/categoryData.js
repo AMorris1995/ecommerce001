@@ -9,11 +9,38 @@ const categoryData = [
         subCategorys: [
             {
                 subCategory: "Laptops",
-                children: ["All Laptops", "Windows laptops"],
+                children: [
+                    "All Laptops",
+                    "Windows laptops",
+                    "MacBook",
+                    "Chromebooks",
+                    "Gaming Laptops",
+                ],
                 collapsed: true,
             },
-            { subCategory: "Desktop PCs", collapsed: true },
-            { subCategory: "Computer accessories", collapsed: true },
+            {
+                subCategory: "Desktop PCs",
+                children: [
+                    "All Desktops",
+                    "Windows PCs",
+                    "Tower PCs",
+                    "Gaming PCs",
+                ],
+                collapsed: true,
+            },
+            {
+                subCategory: "Computer accessories",
+                children: [
+                    "Graphics tablets",
+                    "Headsets and microphones",
+                    "Keyboards",
+                    "Mice",
+                    "PC speakers",
+                    "Power and cables",
+                    "Webcams",
+                ],
+                collapsed: true,
+            },
         ],
     },
     {
@@ -22,9 +49,29 @@ const categoryData = [
         collapsed: true,
         description: "",
         subCategorys: [
-            { subCategory: "Laptops", collapsed: true },
-            { subCategory: "Desktop PCs", collapsed: true },
-            { subCategory: "Computer accessories", collapsed: true },
+            {
+                subCategory: "Consoles",
+                children: [
+                    "PlayStation Consoles",
+                    "Xbox Consoles",
+                    "Nintendo Consoles",
+                ],
+                collapsed: true,
+            },
+            {
+                subCategory: "Console games",
+                children: ["PlayStation Games", "Xbox Games", "Nintendo Games"],
+                collapsed: true,
+            },
+            {
+                subCategory: "Controllers",
+                children: [
+                    "PlayStation Controllers",
+                    "Xbox Controllers",
+                    "Nintendo Controllers",
+                ],
+                collapsed: true,
+            },
         ],
     },
 ];
