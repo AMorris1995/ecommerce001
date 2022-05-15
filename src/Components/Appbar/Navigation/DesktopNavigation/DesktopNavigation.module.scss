@@ -1,0 +1,49 @@
+@import "../../../../pallete.scss";
+.DesktopNavigation__Items {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    .DesktopNavigation__Item {
+        padding: 0.9rem 1rem;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        &:hover {
+            background-color: $secondary-color;
+            .DesktopNavigation__Item__Label {
+                color: $primary-color;
+            }
+        }
+        .DesktopNavigation__Item__Label {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.DesktopNavigation {
+    background-color: $primary-color;
+}
+
+.Dropdown {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 1px 3px 1px #ccc;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    background-color: $secondary-color;
+    .Category {
+        list-style: none;
+    }
+}

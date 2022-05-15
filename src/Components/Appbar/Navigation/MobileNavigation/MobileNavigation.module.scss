@@ -1,0 +1,44 @@
+.MobileNavigation {
+    border-left: 1px solid #ccc;
+    height: 100%;
+
+    .MobileNavigation__Items {
+        list-style: none;
+
+        position: relative;
+        .MobileNavigation__Item {
+            border-bottom: 1px solid #ccc;
+
+            .MobileNavigation__Item__Wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem;
+
+                .MobileNavigation__Item__Label {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+.Navigation__Top__Menu {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.MobileNavigation__Item__Dropdown {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    transition: 0.5s;
+    ul {
+        list-style: none;
+        padding: 1rem;
+    }
+}
