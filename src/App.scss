@@ -63,6 +63,11 @@ p {
     font-weight: bold;
 }
 
+.highlight-text {
+    color: $primary-color;
+    font-size: 1.1em;
+}
+
 .hideMobile {
     @media (max-width: 900px) {
         display: none;
@@ -72,4 +77,10 @@ p {
     @media (min-width: 900px) {
         display: none;
     }
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
 }

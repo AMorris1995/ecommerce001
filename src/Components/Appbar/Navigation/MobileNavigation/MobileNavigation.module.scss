@@ -1,6 +1,7 @@
 .MobileNavigation {
     border-left: 1px solid #ccc;
     height: 100%;
+    z-index: 100;
 
     .MobileNavigation__Items {
         list-style: none;
@@ -9,6 +10,10 @@
         .MobileNavigation__Item {
             border-bottom: 1px solid #ccc;
 
+            p {
+                display: flex;
+                align-items: center;
+            }
             .MobileNavigation__Item__Wrapper {
                 display: flex;
                 align-items: center;
@@ -16,6 +21,8 @@
                 padding: 1rem;
 
                 .MobileNavigation__Item__Label {
+                    display: flex;
+                    align-items: center;
                     font-size: 0.9rem;
                 }
             }

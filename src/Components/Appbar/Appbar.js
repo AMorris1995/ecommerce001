@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Backdrop from "../Global/Backdrop/Backdrop";
 import Logo from "../Global/Logo/Logo";
 import AccountIcon from "./AccountIcon";
+import { Link } from "react-router-dom";
 import classes from "./Appbar.module.scss";
 import BasketIcon from "./BasketIcon";
-import DesktopNavigation from "./Navigation/DesktopNavigation/DesktopNavigation";
 import MobileNavigation from "./Navigation/MobileNavigation/MobileNavigation";
 import ToggleButton from "./Navigation/MobileNavigation/ToggleButton";
 
@@ -19,13 +20,15 @@ export default function Appbar(props) {
                 <div className={classes.Appbar__Container}>
                     <Logo />
                     <div className={classes.ActionIcons}>
-                        <AccountIcon style={{ marginRight: "20px" }} />
+                        <Link to="/account">
+                            <AccountIcon style={{ marginRight: "20px" }} />
+                        </Link>
                         <BasketIcon style={{ marginRight: "20px" }} />
                         <ToggleButton onClick={toggleOpen}></ToggleButton>
                     </div>
                 </div>
             </div>
-            <DesktopNavigation />
+            {open && <Backdrop onClick={toggleOpen} />}
             <MobileNavigation toggleOpen={toggleOpen} open={open} />
         </>
     );

@@ -39,10 +39,7 @@ export default function MobileNavigation(props) {
     };
 
     return (
-        <SideDrawer
-            className={`${classes.MobileNavigation} hideDesktop`}
-            open={props.open}
-        >
+        <SideDrawer className={`${classes.MobileNavigation}`} open={props.open}>
             <ul className={classes.MobileNavigation__Items}>
                 <MobileNavigationTopMenu toggleOpen={props.toggleOpen} />
                 {navData.map((navItem, index) => (

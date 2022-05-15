@@ -8,12 +8,13 @@ export default function MobileNavigationItem(props) {
                 className={classes.MobileNavigation__Item__Wrapper}
                 onClick={() => props.onNavItemClickHandler(props.index)}
             >
-                <p
+                <div
                     style={{ fontSize: "0.9rem" }}
                     className={classes.MobileNavigation__Item__Label}
                 >
-                    {props.navItem.category}
-                </p>
+                    <span className="icon">{props.navItem.icon}</span>
+                    <p>{props.navItem.category}</p>
+                </div>
                 <BiChevronRight />
             </div>
 

@@ -1,7 +1,10 @@
+import { HiOutlineDesktopComputer } from "react-icons/hi";
+import { IoGameControllerOutline } from "react-icons/io5";
 const categoryData = [
     {
         category: "Computing",
         collapsed: true,
+        icon: <HiOutlineDesktopComputer size={20} />,
         description: "",
         subCategorys: [
             {
@@ -15,6 +18,7 @@ const categoryData = [
     },
     {
         category: "Gaming",
+        icon: <IoGameControllerOutline size={20} />,
         collapsed: true,
         description: "",
         subCategorys: [

@@ -1,0 +1,42 @@
+@import "../../pallete.scss";
+
+.Banner {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 4px 3px #ccc;
+    align-items: center;
+    margin: 0 auto;
+    background-color: $keppel;
+    img {
+        max-width: 350px;
+    }
+    @media (max-width: 900px) {
+        padding: 1rem;
+        flex-direction: column;
+    }
+}
+
+.BannerText {
+    text-align: center;
+    h2 {
+        font-size: 3rem;
+        @media (max-width: 900px) {
+            font-size: 2rem;
+        }
+    }
+    p {
+        font-size: 1rem;
+        @media (max-width: 900px) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.ShopNowBtn {
+    padding: 0.5rem 1rem;
+    margin-top: 20px;
+    border-radius: $border-radius;
+    background-color: white;
+
+    border: 2px solid $primary-color;
+}

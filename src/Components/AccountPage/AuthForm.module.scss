@@ -1,0 +1,64 @@
+@import "../../pallete.scss";
+
+.Container {
+    width: 350px;
+    height: fit-content;
+    margin: 0 auto;
+    h4 {
+        text-align: left;
+        padding: 1rem 0;
+    }
+}
+
+.AuthForm {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    margin: 0 auto;
+}
+
+.FormGroup {
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+    input[type="email"] {
+        border-radius: 8px;
+        padding: 0.7rem;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+    input[type="password"] {
+        border-radius: 8px;
+        padding: 0.7rem;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+}
+
+.Hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+.Show {
+    height: 80px;
+    visibility: visible;
+}
+
+.Label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.RegisterBtn {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.6rem;
+    display: block;
+    border-radius: 18px;
+    color: $secondary-color;
+    background-color: $primary-color;
+}
