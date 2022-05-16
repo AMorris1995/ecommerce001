@@ -5,6 +5,9 @@
   box-shadow: 1px 4px 3px #ccc;
 
   background-color: $keppel;
+  @media (max-width: 600px) {
+    padding: 2rem 0.5rem;
+  }
   .Banner__Container {
     display: flex;
     max-width: 1500px;
@@ -13,6 +16,7 @@
 
     margin: 0 auto;
     img {
+      width: 100%;
       max-width: 350px;
     }
     @media (max-width: 900px) {
