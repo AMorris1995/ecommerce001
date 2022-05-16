@@ -56,6 +56,9 @@ export default function Navigation(props) {
     <SideDrawer className={`${classes.Navigation}`} open={props.open}>
       <SideDrawerActions onClick={props.toggleOpen} />
       <ul>
+        <Link onClick={props.toggleOpen} className={classes.Admin} to="/admin">
+          Admin Panel
+        </Link>
         {navData.map((item, index) => {
           return (
             <li className={classes.Navigation__Item}>

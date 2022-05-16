@@ -24,12 +24,15 @@ export default function Homepage(props) {
           <QuickShopBox>Gaming</QuickShopBox>
           <QuickShopBox>Desktops</QuickShopBox>
           <QuickShopBox>Desktops</QuickShopBox>
+          <QuickShopBox>Desktops</QuickShopBox>
+          <QuickShopBox>Desktops</QuickShopBox>
+          <QuickShopBox>Desktops</QuickShopBox>
         </Carousel>
       </div>
 
       <AdvertBoard to="/" img={image1} />
 
-      <RecentlyViewedProducts recentProducts={[1, 2, 3, 4, 5]} />
+      <RecentlyViewedProducts recentProducts={[1, 2, 3, 4, 5, 6]} />
     </div>
   );
 }

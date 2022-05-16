@@ -1,123 +1,124 @@
 import classes from "./AddProduct.module.scss";
 import categoryData from "../../categoryData";
 import { useState } from "react";
+import FormGroup from "../Global/FormGroup/FormGroup";
+import CustomInput from "../Global/CustomInput/CustomInput";
 
 export default function AddProduct(props) {
-  const [curCategorySubIndex, setCurCategorySubIndex] = useState(0);
-  const [curCategoryIndex, setCurCategoryInex] = useState(0);
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [description, setDescription] = useState("");
+  const [curCategory, setCurCategory] = useState(null);
+  const [curSubCategory, setCurSubCategory] = useState(null);
+  const [type, setType] = useState(null);
 
-  const [newProd, setNewProd] = useState({
-    title: "",
-    price: "",
-    imageUrl: "",
-    description: "",
-    category: "",
-    subCategory: "",
-    type: "",
-  });
-
-  console.log(newProd);
-  console.log(curCategoryIndex);
   return (
     <form className={classes.AddProduct}>
-      <div className={classes.FormGroup}>
-        <label>Product Title:</label>
-        <input
+      <FormGroup label="Product Title:">
+        <CustomInput
           type="text"
           placeholder="Product title*"
-          value={newProd.title}
+          value={title}
           onChange={(e) => {
-            setNewProd((prevState) => {
-              return { ...prevState, title: e.target.value };
-            });
+            setTitle(e.target.value);
           }}
         />
-      </div>
+      </FormGroup>
 
-      <div className={classes.FormGroup}>
-        <label>Product Price:</label>
-        <input
+      <FormGroup label="Product Price:">
+        <CustomInput
           type="number"
           placeholder="£"
+          value={price}
           onChange={(e) => {
-            setNewProd((prevState) => {
-              return { ...prevState, price: e.target.value };
-            });
+            setPrice(parseInt(e.target.value));
           }}
         />
-      </div>
+      </FormGroup>
 
-      <div className={classes.FormGroup}>
-        <label>Product ImageURL:</label>
-        <input
+      <FormGroup label="Product ImageURL:">
+        <CustomInput
           type="text"
           placeholder="https://"
           onChange={(e) => {
-            setNewProd((prevState) => {
-              return { ...prevState, imageUrl: e.target.value };
-            });
+            setImageUrl(e.target.value);
           }}
         />
-      </div>
+      </FormGroup>
 
-      <div className={classes.FormGroup}>
-        <label>Product Description:</label>
+      <FormGroup label="Product Description:">
         <textarea
           className={classes.ProductDescription}
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
+          value={description}
           placeholder="Product description"
-          value={newProd.description}
-          onChange={(e) => {
-            setNewProd((prevState) => {
-              return { ...prevState, description: e.target.value };
-            });
-          }}
         />
-      </div>
+      </FormGroup>
 
-      <div className={classes.FormGroup}>
-        <label>Product Category:</label>
+      <FormGroup label="Category:">
         <select
+          name="category"
           onChange={(e) => {
-            setCurCategoryInex(e.target.value);
-            setNewProd((prevState) => {
-              return { ...prevState, category: e.target.value };
-            });
+            setCurCategory(e.target.value);
+            setCurSubCategory(null);
           }}
         >
-          {categoryData.map((cat, index) => {
-            return <option value={index}>{cat.category}</option>;
-          })}
-        </select>
-      </div>
+          <option value={null} selected hidden></option>
 
-      <div className={classes.FormGroup}>
-        <label>Product Subcategory:</label>
-        <select
-          onChange={(e) => {
-            setCurCategorySubIndex(e.target.value);
-            setNewProd((prevState) => {
-              return { ...prevState, subCategory: e.target.value };
-            });
-          }}
-        >
-          {categoryData[curCategoryIndex].subCategorys.map(
-            (subCategory, subIndex) => {
-              return <option value={subIndex}>{subCategory.category}</option>;
-            }
-          )}
+          {categoryData.map((category) => (
+            <option value={category.category}>{category.category}</option>
+          ))}
         </select>
-      </div>
+      </FormGroup>
 
-      <div className={classes.FormGroup}>
-        <label>Product Type:</label>
-        <select>
-          {categoryData[curCategoryIndex].subCategorys[
-            curCategorySubIndex
-          ].children.map((type, subIndex) => {
-            return <option>{type}</option>;
-          })}
-        </select>
-      </div>
+      {curCategory && (
+        <FormGroup label="SubCategory:">
+          <select
+            name="subCategory"
+            onChange={(e) => {
+              setCurSubCategory(e.target.value);
+            }}
+          >
+            <option value={null} selected disabled>
+              Select Option
+            </option>
+            {curCategory &&
+              categoryData
+                .find((cat) => cat.category === curCategory)
+                .subCategorys.map((subCategory) => (
+                  <option value={subCategory.category}>
+                    {subCategory.category}
+                  </option>
+                ))}
+          </select>
+        </FormGroup>
+      )}
+
+      {curSubCategory && (
+        <FormGroup label="Type:">
+          <select
+            name="type"
+            onChange={(e) => {
+              setType(e.target.value);
+            }}
+          >
+            <option value={null} selected disabled>
+              Select Option
+            </option>
+
+            {curSubCategory &&
+              categoryData
+                .find((cat) => cat.category === curCategory)
+                .subCategorys.find(
+                  (subCategory) => subCategory.category === curSubCategory
+                )
+                .children.map((type) => <option value={type}>{type}</option>)}
+          </select>
+        </FormGroup>
+      )}
     </form>
   );
 }

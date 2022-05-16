@@ -4,13 +4,13 @@ import classes from "./RecentlyViewedProducts.module.scss";
 
 export default function RecentlyViewedProducts(props) {
   return (
-    <div className={`${classes.Wrapper} hideMobile`}>
+    <div className={`${classes.Wrapper}`}>
       <h4>Recently Viewed</h4>
-      <Carousel>
+      <div className={classes.RecentlyViewedProducts}>
         {props.recentProducts.map((recent) => (
           <RecentlyViewedProduct />
         ))}
-      </Carousel>
+      </div>
     </div>
   );
 }

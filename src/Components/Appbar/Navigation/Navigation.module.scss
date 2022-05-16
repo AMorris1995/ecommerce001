@@ -1,3 +1,5 @@
+@import "../../../pallete.scss";
+
 .Navigation {
   z-index: 100;
   ul {
@@ -24,9 +26,9 @@
   height: 100%;
   position: absolute;
   top: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
   transition: 0.5s;
+  overflow: auto;
+  overflow-x: hidden;
   .NavLink {
     display: block;
     text-decoration: none;
@@ -53,4 +55,13 @@
   align-items: center;
   padding: 1rem;
   padding-bottom: 0;
+}
+
+.Admin {
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 0.8rem;
+  display: block;
+  background-color: $onyx;
+  color: white;
 }

@@ -1,12 +1,17 @@
 .Wrapper {
   max-width: 1500px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  padding: 1rem;
   h4 {
     text-align: center;
     margin-bottom: 20px;
   }
   .RecentlyViewedProducts {
-    display: flex;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     justify-content: space-between;
   }
 }
