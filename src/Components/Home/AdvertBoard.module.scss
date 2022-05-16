@@ -1,0 +1,48 @@
+@import "../../pallete.scss";
+
+.AdvertBoard {
+  max-width: 1500px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  width: 100%;
+  margin: 100px auto;
+  background-color: $primary-color;
+  .AdvertBoard__Text {
+    width: 70%;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+    h4 {
+      margin-bottom: 20px;
+    }
+    a {
+      display: block;
+      margin: 0 auto;
+      width: fit-content;
+      background-color: whitesmoke;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      color: black;
+      border-radius: 28px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+  img {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    display: block;
+  }
+}

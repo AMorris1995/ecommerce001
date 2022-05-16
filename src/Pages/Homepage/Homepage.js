@@ -3,55 +3,33 @@ import "react-multi-carousel/lib/styles.css";
 import QuickShopBox from "../../Components/Home/QuickShopBox";
 import { Link } from "react-router-dom";
 import classes from "./Homepage.module.scss";
-import Carousel from "react-multi-carousel";
+import Carousel from "../../Components/Carousel/Carousel";
+import Product from "../../Components/Product/Product";
+import RecentlyViewedProduct from "../../Components/Home/RecentlyViewedProduct";
+import image from "./infiniteA.png";
+import image1 from "./infiniteAGroup.png";
+import AdvertBoard from "../../Components/Home/AdvertBoard";
+import RecentlyViewedProducts from "../../Components/Home/RecentlyViewedProducts";
 
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 8,
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 6,
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 3,
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 2,
-    },
-};
 export default function Homepage(props) {
-    return (
-        <div>
-            <Banner></Banner>
-            <div className={classes.Container}>
-                <h4>Shop Deals</h4>
+  return (
+    <div style={{ paddingBottom: "2rem" }}>
+      <Banner></Banner>
+      <div className={classes.Container}>
+        <h4>Shop Deals</h4>
 
-                <Carousel
-                    responsive={responsive}
-                    swipeable
-                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                    containerClass={classes.Container}
-                    autoPlay={false}
-                >
-                    <QuickShopBox>Laptops</QuickShopBox>
-                    <QuickShopBox>Washing machines</QuickShopBox>
-                    <QuickShopBox>Gaming</QuickShopBox>
-                    <QuickShopBox>Desktops</QuickShopBox>
-                    <QuickShopBox>Desktops</QuickShopBox>
-                    <QuickShopBox>Desktops</QuickShopBox>
-                    <QuickShopBox>Desktops</QuickShopBox>
-                    <QuickShopBox>Desktops</QuickShopBox>
-                </Carousel>
-            </div>
+        <Carousel>
+          <QuickShopBox>Laptops</QuickShopBox>
+          <QuickShopBox>Washing machines</QuickShopBox>
+          <QuickShopBox>Gaming</QuickShopBox>
+          <QuickShopBox>Desktops</QuickShopBox>
+          <QuickShopBox>Desktops</QuickShopBox>
+        </Carousel>
+      </div>
 
-            <Link to="/admin" style={{ textAlign: "center", display: "block" }}>
-                CLICK ME TO ADD PRODUCTS
-            </Link>
-        </div>
-    );
+      <AdvertBoard to="/" img={image1} />
+
+      <RecentlyViewedProducts recentProducts={[1, 2, 3, 4, 5]} />
+    </div>
+  );
 }

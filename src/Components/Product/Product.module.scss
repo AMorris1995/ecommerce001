@@ -1,0 +1,58 @@
+@import "../../pallete.scss";
+.Product {
+  padding: 1rem;
+  margin: 50px auto;
+  box-shadow: 1px 1px 2px 1px #ccc;
+  //   border-radius: 12px;
+  width: fit-content;
+  .Product__Title {
+    padding-bottom: 0.4rem;
+    padding-left: 1rem;
+  }
+  .Product__Container {
+    display: flex;
+    width: fit-content;
+    .Product__Image__Container {
+      width: 300px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 100%;
+      }
+    }
+    .Product__Data__Points {
+      width: 350px;
+      ul {
+        font-size: 0.8rem;
+        width: fit-content;
+        margin: 20px auto;
+        li {
+          margin: 0 auto;
+        }
+      }
+    }
+    .Product__Data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px dotted #ccc;
+      text-align: right;
+      padding-left: 2rem;
+      width: 260px;
+      .Product__Price {
+        font-size: 1.6rem;
+      }
+      a {
+        text-decoration: none;
+        color: $platinum;
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 0.8rem;
+        border-radius: 18px;
+        background-color: $keppel;
+      }
+    }
+  }
+}

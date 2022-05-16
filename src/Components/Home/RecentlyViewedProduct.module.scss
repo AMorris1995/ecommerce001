@@ -1,0 +1,26 @@
+@import "../../pallete.scss";
+.RecentlyViewedProduct {
+  border: 1px solid #ccc;
+  margin: 10px;
+  .RecentlyViewedProduct__ImageContainer {
+    img {
+      width: 100%;
+    }
+  }
+  .RecentlyViewedProduct__Data {
+    text-align: center;
+    font-size: 1rem;
+    p {
+      font-size: 0.8em;
+    }
+    a {
+      text-decoration: none;
+      font-size: 0.8em;
+      background-color: $keppel;
+      padding: 0.4rem;
+      display: block;
+      margin-top: 10px;
+      color: whitesmoke;
+    }
+  }
+}

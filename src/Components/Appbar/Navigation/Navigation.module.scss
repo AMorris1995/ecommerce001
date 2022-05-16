@@ -1,0 +1,54 @@
+.Navigation {
+  z-index: 100;
+  ul {
+    width: 100%;
+    list-style: none;
+    .Navigation__Item {
+      .Navigation__Item__Label {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.Dropdown {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  .NavLink {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    margin: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.SideDrawerActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.MenuText {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  padding-bottom: 0;
+}
