@@ -1,0 +1,15 @@
+**********
+        FRONT-END
+                ***********
+- Refine Navigation
+- Complete authentication
+
+___________________________________________
+
+**********   
+        BACK-END  
+                ***********
+- Add backend (firebase);
+- Add product
+
+__________________________________________

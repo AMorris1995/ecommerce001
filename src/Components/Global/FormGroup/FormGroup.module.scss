@@ -1,0 +1,30 @@
+.FormGroup {
+  margin-bottom: 20px;
+  .FormGroup__Label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    display: block;
+  }
+  input,
+  select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  input[type="number"] {
+    width: fit-content;
+  }
+  textarea {
+    height: 150px;
+    resize: none;
+    padding: 0.5rem;
+
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+  select {
+    width: 100%;
+  }
+}
