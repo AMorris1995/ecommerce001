@@ -24,6 +24,8 @@
   height: 100%;
   position: absolute;
   top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
   transition: 0.5s;
   .NavLink {
     display: block;
