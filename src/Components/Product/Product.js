@@ -3,6 +3,21 @@ import Button from "../Global/Button/Button";
 import classes from "./Product.module.scss";
 
 export default function Product(props) {
+  const addToRecents = () => {
+    const prods = localStorage.getItem("recentlyViewed")
+      ? JSON.parse(localStorage.getItem("recentlyViewed"))
+      : [];
+
+    const index = prods.findIndex(
+      (item) => item.productData.title === props.prod.productData.title
+    );
+
+    if (index === -1) {
+      prods.push(props.prod);
+    }
+
+    localStorage.setItem("recentlyViewed", JSON.stringify(prods));
+  };
   return (
     <div className={classes.Product}>
       <h4 className={classes.Product__Title}>
@@ -10,16 +25,24 @@ export default function Product(props) {
       </h4>
       <div className={classes.Product__Container}>
         <div className={classes.Product__Image__Container}>
-          <img src="https://media.currys.biz/i/currysprod/10230558?$g-small$&fmt=auto" />
+          <img src={props.prod.productData.imageUrl} />
         </div>
         <div className={classes.Product__Data__Points}>
-          <ul>
-            <li>Some Data Points</li>
-          </ul>
+          {props.prod.productData.keypoints && (
+            <ul>
+              {props.prod.productData.keypoints.map((keyPoint) => (
+                <li>{keyPoint}</li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className={classes.Product__Data}>
-          <h4 className={classes.Product__Price}>£150</h4>
-          <Link to="/">View details</Link>
+          <h4 className={classes.Product__Price}>
+            £{props.prod.productData.price}
+          </h4>
+          <Link onClick={addToRecents} to="/">
+            View details
+          </Link>
         </div>
       </div>
     </div>

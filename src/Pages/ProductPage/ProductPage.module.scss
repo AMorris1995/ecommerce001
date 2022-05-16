@@ -1,0 +1,14 @@
+.ProductPage {
+  max-width: 1500px;
+  display: grid;
+  padding: 1rem;
+  //   grid-template-areas: "filter products";
+  grid-template-columns: 350px calc(100% - 382px);
+  gap: 20px;
+  margin: 0 auto;
+
+  @media (max-width: 1130px) {
+    gap: 0;
+    grid-template-columns: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+.FilterPanel {
+  grid-column-start: 1;
+  width: 100%;
+  height: fit-content;
+  border: 1px solid #ccc;
+  grid-column-end: 2;
+  .FilterPanelMenu {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.FilterGroup {
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #ccc;
+  .Outer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.Checkbox {
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  label {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+}

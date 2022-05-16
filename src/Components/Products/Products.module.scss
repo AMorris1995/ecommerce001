@@ -1,0 +1,8 @@
+.Products {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  @media (max-width: 1130px) {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+}

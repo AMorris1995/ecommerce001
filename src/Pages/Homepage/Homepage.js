@@ -32,7 +32,7 @@ export default function Homepage(props) {
 
       <AdvertBoard to="/" img={image1} />
 
-      <RecentlyViewedProducts recentProducts={[1, 2, 3, 4, 5, 6]} />
+      <RecentlyViewedProducts />
     </div>
   );
 }

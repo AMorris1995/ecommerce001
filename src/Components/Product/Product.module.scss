@@ -1,29 +1,45 @@
 @import "../../pallete.scss";
 .Product {
   padding: 1rem;
-  margin: 50px auto;
+  margin-bottom: 20px;
+  width: 100%;
   box-shadow: 1px 1px 2px 1px #ccc;
-  //   border-radius: 12px;
-  width: fit-content;
+  @media (max-width: 800px) {
+    margin: 10px auto;
+    text-align: center;
+  }
   .Product__Title {
     padding-bottom: 0.4rem;
     padding-left: 1rem;
+    @media (max-width: 800px) {
+      padding: 0;
+      text-align: center;
+    }
   }
   .Product__Container {
     display: flex;
-    width: fit-content;
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
     .Product__Image__Container {
-      width: 300px;
-      height: 250px;
+      width: 40%;
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+
       img {
         height: 100%;
       }
     }
     .Product__Data__Points {
-      width: 350px;
+      width: 30%;
+      @media (max-width: 800px) {
+        display: none;
+      }
+
       ul {
         font-size: 0.8rem;
         width: fit-content;
@@ -40,9 +56,18 @@
       border-left: 1px dotted #ccc;
       text-align: right;
       padding-left: 2rem;
-      width: 260px;
+      width: 30%;
+
+      @media (max-width: 800px) {
+        border-left: none;
+        padding-left: 0;
+        width: 100%;
+      }
       .Product__Price {
         font-size: 1.6rem;
+        @media (max-width: 800px) {
+          text-align: center;
+        }
       }
       a {
         text-decoration: none;

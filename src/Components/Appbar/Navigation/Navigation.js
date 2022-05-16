@@ -126,11 +126,15 @@ export default function Navigation(props) {
                           <h5>{subItem.category}</h5>
                         </div>
                         {subItem.children.map((child) => {
+                          const link =
+                            `${item.category}/${subItem.category}/${child}`
+                              .replaceAll(" ", "-")
+                              .toLowerCase();
                           return (
                             <Link
                               onClick={props.toggleOpen}
                               className={classes.NavLink}
-                              to={`${child}`}
+                              to={link}
                             >
                               {child}
                             </Link>

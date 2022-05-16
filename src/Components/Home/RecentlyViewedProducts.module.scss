@@ -11,8 +11,11 @@
   .RecentlyViewedProducts {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 200px));
+    justify-content: center;
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 130px));
+    }
     @media (max-width: 500px) {
       gap: 5px;
     }

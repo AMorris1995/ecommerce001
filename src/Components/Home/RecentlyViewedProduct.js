@@ -5,14 +5,12 @@ export default function RecentlyViewedProduct(props) {
   return (
     <div className={classes.RecentlyViewedProduct}>
       <div className={classes.RecentlyViewedProduct__ImageContainer}>
-        <img src="https://media.currys.biz/i/currysprod/10230558?$g-small$&fmt=auto" />
+        <img src={props.prod.productData.imageUrl} />
       </div>
       <div className={classes.RecentlyViewedProduct__Data}>
-        <Link to="/">
-          DELL Inspiron 15 3511 15.6" Laptop - Intel Core i5, 256 GB, Silver
-        </Link>
+        <Link to="/">{props.prod.productData.title}</Link>
 
-        <h4>£150</h4>
+        <h4 className={classes.Price}>£{props.prod.productData.price}</h4>
       </div>
     </div>
   );
