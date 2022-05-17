@@ -13,21 +13,26 @@ export default function Product(props) {
     );
 
     if (index === -1) {
-      prods.push(props.prod);
+      if (prods.length === 8) {
+        prods.shift();
+        prods.unshift(props.prod);
+      } else {
+        prods.push(props.prod);
+      }
     }
 
     localStorage.setItem("recentlyViewed", JSON.stringify(prods));
   };
   return (
     <div className={classes.Product}>
-      <h4 className={classes.Product__Title}>
-        DELL Inspiron 15 3511 15.6" Laptop - Intel Core i5, 256 GB, Silver
-      </h4>
       <div className={classes.Product__Container}>
         <div className={classes.Product__Image__Container}>
           <img src={props.prod.productData.imageUrl} />
         </div>
         <div className={classes.Product__Data__Points}>
+          <h4 className={classes.Product__Title}>
+            DELL Inspiron 15 3511 15.6" Laptop - Intel Core i5, 256 GB, Silver
+          </h4>
           {props.prod.productData.keypoints && (
             <ul>
               {props.prod.productData.keypoints.map((keyPoint) => (

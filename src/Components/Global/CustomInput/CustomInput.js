@@ -8,6 +8,8 @@ export default function CustomInput(props) {
       type={props.type}
       onChange={props.onChange}
       placeholder={props.placeholder}
+      step={props.step}
+      pattern={props.pattern}
     />
   );
 }

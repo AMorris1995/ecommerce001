@@ -19,14 +19,12 @@ export default function Homepage(props) {
         <h4>Shop Deals</h4>
 
         <Carousel>
-          <QuickShopBox>Laptops</QuickShopBox>
-          <QuickShopBox>Washing machines</QuickShopBox>
-          <QuickShopBox>Gaming</QuickShopBox>
-          <QuickShopBox>Desktops</QuickShopBox>
-          <QuickShopBox>Desktops</QuickShopBox>
-          <QuickShopBox>Desktops</QuickShopBox>
-          <QuickShopBox>Desktops</QuickShopBox>
-          <QuickShopBox>Desktops</QuickShopBox>
+          <QuickShopBox to="/computing/laptops/all-laptops">
+            Laptops
+          </QuickShopBox>
+          <QuickShopBox to="/gaming/consoles/xbox-consoles">
+            Consoles
+          </QuickShopBox>
         </Carousel>
       </div>
 

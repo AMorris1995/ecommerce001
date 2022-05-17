@@ -15,9 +15,9 @@ export default function RecentlyViewedProducts(props) {
     <div className={`${classes.Wrapper}`}>
       <h4>Recently Viewed</h4>
       <div className={classes.RecentlyViewedProducts}>
-        {recentlyViewed.map((recent) => (
-          <RecentlyViewedProduct prod={recent} />
-        ))}
+        {recentlyViewed
+          .map((recent) => <RecentlyViewedProduct prod={recent} />)
+          .slice(0, 8)}
       </div>
     </div>
   );

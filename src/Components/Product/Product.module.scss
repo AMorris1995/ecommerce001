@@ -1,6 +1,6 @@
 @import "../../pallete.scss";
 .Product {
-  padding: 1rem;
+  padding: 1rem 0;
   margin-bottom: 20px;
   width: 100%;
   box-shadow: 1px 1px 2px 1px #ccc;
@@ -9,25 +9,28 @@
     text-align: center;
   }
   .Product__Title {
-    padding-bottom: 0.4rem;
-    padding-left: 1rem;
+    padding: 1rem;
+    padding-top: 0;
     @media (max-width: 800px) {
       padding: 0;
       text-align: center;
     }
   }
   .Product__Container {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     @media (max-width: 800px) {
       flex-direction: column;
     }
     .Product__Image__Container {
-      width: 40%;
+      width: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
       @media (max-width: 800px) {
         width: 100%;
+        margin: 0 auto;
       }
 
       img {
@@ -35,9 +38,11 @@
       }
     }
     .Product__Data__Points {
-      width: 30%;
+      width: 40%;
+      padding-left: 2rem;
       @media (max-width: 800px) {
-        display: none;
+        padding: 2rem;
+        width: 100%;
       }
 
       ul {
@@ -55,12 +60,12 @@
       justify-content: space-between;
       border-left: 1px dotted #ccc;
       text-align: right;
-      padding-left: 2rem;
+      padding: 1rem;
       width: 30%;
 
       @media (max-width: 800px) {
         border-left: none;
-        padding-left: 0;
+        padding: 0 2rem;
         width: 100%;
       }
       .Product__Price {
@@ -70,12 +75,15 @@
         }
       }
       a {
+        display: block;
         text-decoration: none;
+        min-width: 200px;
+
         color: $platinum;
         padding: 0.5rem;
         text-align: center;
         font-size: 0.8rem;
-        border-radius: 18px;
+        // border-radius: 18px;
         background-color: $keppel;
       }
     }
