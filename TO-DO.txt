@@ -1,15 +1,28 @@
 **********
         FRONT-END
                 ***********
-- Refine Navigation
+- Refine Navigation ??
 - Complete authentication
+- Add Product Detail Page
+- Link up products to product detail page;
+- Refine Add Product panel
 
 ___________________________________________
 
 **********   
         BACK-END  
                 ***********
-- Add backend (firebase);
-- Add product
+- Add backend (firebase); //
+- Add product //
+
 
 __________________________________________
+
+
+
+***********
+        Known Bugs
+                ***********
+
+
+---- When adding an item to recentlyViewed (localStorage) and the length of the array is 8, the first element of the array is always replaced.
